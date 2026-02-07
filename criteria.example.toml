@@ -1,0 +1,60 @@
+# novel-finder configuration file
+# Copy this file to criteria.toml and customize it for your search.
+
+[criteria]
+# Natural language description of what you're looking for.
+# Used by the LLM evaluator for semantic matching.
+prompt = "I want a fantasy magic school novel where the main character starts off weak but grows powerful"
+
+# Minimum number of pages (optional).
+min_pages = 200
+
+# Maximum number of pages (optional, omit for no upper limit).
+# max_pages = 5000
+
+# Minimum overall rating on RoyalRoad (0.0 - 5.0).
+min_rating = 4.0
+
+# Allowed publication statuses. Options: "Ongoing", "Completed", "Hiatus", "Dropped", "Stub"
+allowed_statuses = ["Ongoing", "Completed"]
+
+# Tags that must be present on the novel.
+required_tags = ["Fantasy"]
+
+# Tags that must NOT be present on the novel.
+excluded_tags = ["Fan Fiction", "Sexual Content"]
+
+[eval]
+# Evaluation mode: "local" for keyword/heuristic matching, "llm" for AI-powered evaluation.
+mode = "local"
+
+# LLM settings (only used when mode = "llm"):
+# llm_api_key = "sk-..."
+# llm_model = "claude-sonnet-4-5-20250929"
+# llm_endpoint = "https://api.anthropic.com/v1"
+
+[seeds]
+# Seed source: "manual" for a list of URLs/IDs, "search" to scrape RoyalRoad search.
+source = "manual"
+
+# Manual seed URLs (used when source = "manual"):
+urls = [
+    "https://www.royalroad.com/fiction/12345",
+    "https://www.royalroad.com/fiction/67890",
+]
+
+# Search settings (used when source = "search"):
+# source = "search"
+# search_query = "fantasy magic school"
+# search_max_results = 20
+
+[run]
+# When to stop processing. Types: "max_novels", "max_time" (seconds), "empty_queue"
+stop_condition = { type = "max_novels", value = 50 }
+
+# Whether to discover new novels via "Others Also Liked" recommendations.
+discovery_enabled = true
+
+[logging]
+# Enable verbose/debug logging.
+verbose = false
