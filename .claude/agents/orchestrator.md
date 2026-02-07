@@ -54,6 +54,8 @@ This phase is the entire reason this orchestration system exists. Without it, th
 
 After the task is complete (or after exhausting remediation cycles), produce a detailed retrospective covering ALL of the following sections. Every section must contain specific, concrete observations — not generic platitudes.
 
+**IMPORTANT: You MUST save the retrospective to a file.** Use the Write tool to save the full retrospective to `.claude/retrospectives/<YYYY-MM-DD>-<short-slug>.md` (e.g., `.claude/retrospectives/2026-02-07-fix-build-errors.md`). Create the `.claude/retrospectives/` directory if it does not exist. This ensures the retrospective is always preserved and visible to the user regardless of how the output is summarized.
+
 #### 6a. Execution Timeline
 
 Produce a brief timeline of what actually happened:

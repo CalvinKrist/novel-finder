@@ -80,7 +80,7 @@ pub fn print_detailed_score(score: &NovelScore) {
     let mut sub_scores: Vec<_> = score.sub_scores.iter().collect();
     sub_scores.sort_by_key(|(k, _)| k.clone());
     for (criterion, sub_score) in &sub_scores {
-        println!("  {}: {:.0}%", criterion, sub_score * 100.0);
+        println!("  {}: {:.0}%", criterion, *sub_score * 100.0);    
     }
     println!();
     println!("Reasoning: {}", score.reasoning);
