@@ -39,8 +39,7 @@ impl DiscoverySource for AlsoLikedDiscovery {
         //
         // Steps:
         // 1. Use scraper::novel_page::scrape_also_liked() to get related novel IDs
-        // 2. For each discovered ID, fetch minimal metadata (title, rating, status, tags)
-        //    - This could be a lighter scrape than full novel_page::scrape_novel()
+        // 2. For each discovered ID, scrape and parse the novel using scrape_novel or parse_novel_from_html
         // 3. Apply lightweight pre-filtering:
         //    - Check if status is in allowed_statuses
         //    - Check if rating meets min_rating
