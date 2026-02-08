@@ -1,7 +1,8 @@
 ---
-name: orchestrator
+name: manager
 description: Orchestrates the full development workflow by running the researcher, planner, implementer, and verifier agents in sequence. Use this agent to execute an end-to-end development task from prompt to verified implementation.
 tools: Task, Write
+disallowedTools: Read, Grep, Glob, Edit, Bash, WebSearch, WebFetch, NotebookEdit
 model: opus
 maxTurns: 50
 ---
